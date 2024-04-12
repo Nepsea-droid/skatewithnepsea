@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Portfolio Website</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #bcf0e7; /* Change background color to light gray */
+        }
+
+        /* Login Page Styles */
+        .login-container {
+            max-width: 450px;
+            margin: 100px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            text-align: center;
+            background-color: #8af725; /* Add background color to login container */
+        }
+
+        .login-container input {
+            width: 90%;
+            margin: 10px 0px;
+            padding: 10px;
+        }
+
+        .login-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            border-color: #007bff;
+        }
+
+        .login-container button:hover {
+            color: blue;
+            background-color: beige;
+            border-color: #007bff;
+        }
+
+        /* Portfolio Page Styles */
+        .portfolio-container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            text-align: center;
+        }
+        .login-container button:active{
+            background-color: rgb(255, 220, 24);
+            border-color: #bcf0e7;
+            border-top: #bcf0e7;
+        
+
+
+        }
+        p3{
+            background-color: black;
+            color: #ccc;
+            font-style: oblique;
+            position: absolute;
+            text-align: center;
+            padding-left: 512px;
+            padding-right: 512.5px;
+            padding-top: 30px;
+            padding-bottom: 30px;
+
+
+        }
+    </style>
+</head>
+<body>
+    <p3>
+        WELCOME TO NEPSEA DEVELOPMENT HUB
+    </p3>
+    <br>
+    <div class="login-container">
+        
+        <h1>Login</h1>
+        <form id="loginForm">
+            <input type="text" placeholder="Username" id="username" required>
+            <input type="password" placeholder="Password" id="password" required>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+    <script>
+        // Handle form submission
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+            let username = document.getElementById('username').value;
+            let password = document.getElementById('password').value;
+
+            // Predefined username and password
+            const correctUsername = "admin";
+            const correctPassword = "password123";
+
+            // Function to check username and password
+            function checkCredentials(username, password) {
+                if (username === correctUsername && password === correctPassword) {
+                    alert("Login successful!");
+                    window.location.href = 'portfolio.html'; // Redirect to the portfolio page
+                } else {
+                    alert("Incorrect username or password. Please try again.");
+                }
+            }
+
+            checkCredentials(username, password); // Call the checkCredentials function
+        });
+    </script>
+</body>
+</html>
